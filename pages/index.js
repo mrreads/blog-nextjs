@@ -1,5 +1,20 @@
 import { getAllPost } from './api/posts';
 
+import Post from 'components/Post';
+
+const Home = ({ posts }) => {
+  return (
+    <div>
+      <h1> Blog </h1>
+      {
+        posts.data.map(post => {
+          return (<Post key={post.id} data={post.attributes} />)
+        })
+      }
+    </div>
+  )
+}
+
 export async function getStaticProps() {
   const posts = await getAllPost();
   return {
@@ -9,11 +24,4 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home(props) {
-  console.log(props)  
-  return (
-    <div>
-      <h1> Blog </h1>
-    </div>
-  )
-}
+export default Home;
