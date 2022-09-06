@@ -4,14 +4,21 @@ import Post from 'components/MiniPost';
 
 const Home = ({ posts }) => {
   return (
-    <div>
-      <h1> Blog </h1>
+      <>
+      
+      <div className='heading'>
+        <h1> Все записи </h1>
+      </div>
+
+
+      <div className='posts'>
       {
         posts.map(post => {
           return (<Post key={post.id} data={post.attributes} />)
         })
       }
-    </div>
+      </div>
+      </>
   )
 }
 

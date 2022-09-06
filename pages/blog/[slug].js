@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import Link from 'next/link';
 
 import { getAllPost } from './../api/posts';
 import { getPostBySlug } from './../api/post';
@@ -30,7 +30,23 @@ export async function getStaticPaths() {
 
 
 const SinglePost = ({ post }) => {
-  return (<Post data={post.data.attributes} />)
+  return (
+  <>
+
+    <div className='heading-wrapper'>
+      <Link href="/">
+      <div className='heading back'>
+        <h2> Назад </h2>
+      </div>
+      </Link>
+      <div className='heading title'>
+        <h1> { post.data.attributes.title } </h1>
+      </div>
+    </div>
+
+
+    <Post data={post.data.attributes} />
+  </>)
 }
 
 export default SinglePost

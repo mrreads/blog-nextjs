@@ -1,8 +1,8 @@
-const baseUrl = 'http://localhost:1337/api';
+import BASE_URL from '/config/';
 
 const getPostBySlug = async (slug) => 
 {
-    let url = `${baseUrl}/slugify/slugs/post/${slug}`;
+    let url = `${BASE_URL}/api/slugify/slugs/post/${slug}`;
     const response = await fetch(url);
     const data = await response.json();
     return data
