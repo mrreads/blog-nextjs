@@ -7,7 +7,7 @@ const Home = ({ posts }) => {
     <div>
       <h1> Blog </h1>
       {
-        posts.data.map(post => {
+        posts.map(post => {
           return (<Post key={post.id} data={post.attributes} />)
         })
       }
