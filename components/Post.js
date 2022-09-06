@@ -1,11 +1,12 @@
+import Link from "next/link";
+
 const Post = ({ data }) => 
 {
-    const { title, description } = data;
-    console.log(image)
+    const { title, content } = data;
     return (
     <div className="post">
         <h1> { title } </h1>
-        <p> { description } </p>
+        <p> { content } </p>
     </div>
     )
 }

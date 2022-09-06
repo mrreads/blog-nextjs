@@ -1,6 +1,6 @@
 import { getAllPost } from './api/posts';
 
-import Post from 'components/Post';
+import Post from 'components/MiniPost';
 
 const Home = ({ posts }) => {
   return (
@@ -18,9 +18,7 @@ const Home = ({ posts }) => {
 export async function getStaticProps() {
   const posts = await getAllPost();
   return {
-    props: {
-      posts,
-    },
+    props: { posts }
   }
 }
 
