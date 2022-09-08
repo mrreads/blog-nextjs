@@ -5,8 +5,10 @@ const Error = () => {
       <>
       
       <Link href="/">
-        <div className='heading' style={{cursor: "pointer"}}>
-          <h1> Перейти на главную </h1>
+        <div className='heading-wrapper'>
+          <div className='heading' style={{cursor: "pointer"}}>
+            <h1> Перейти на главную </h1>
+          </div>
         </div>
       </Link>
 

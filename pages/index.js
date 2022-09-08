@@ -6,9 +6,12 @@ const Home = ({ posts }) => {
   return (
       <>
       
-      <div className='heading'>
-        <h1> Все записи </h1>
+      <div className='heading-wrapper'>
+        <div className='heading'>
+          <h1> Все записи </h1>
+        </div>
       </div>
+
 
 
       <div className='posts'>

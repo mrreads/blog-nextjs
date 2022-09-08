@@ -1,2 +1,2 @@
-const BASE_URL = 'http://localhost:1337';
+const BASE_URL = 'https://strapi.mrreads.ru';
 export default BASE_URL
