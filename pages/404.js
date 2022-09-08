@@ -1,9 +1,13 @@
+import Head from 'next/head';
 import Link from "next/link";
 
 const Error = () => {
   return (
       <>
-      
+      <Head>
+        <title> 404 </title>
+      </Head>
+
       <Link href="/">
         <div className='heading-wrapper'>
           <div className='heading' style={{cursor: "pointer"}}>

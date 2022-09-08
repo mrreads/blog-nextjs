@@ -1,14 +1,19 @@
 import { getAllPost } from './api/posts';
 
+import Head from 'next/head';
 import Post from 'components/MiniPost';
 
 const Home = ({ posts }) => {
   return (
       <>
-      
+
+      <Head>
+        <title>Блог</title>
+      </Head>
+
       <div className='heading-wrapper'>
         <div className='heading'>
-          <h1> Все записи </h1>
+          <h1> Блог  </h1>
         </div>
       </div>
 

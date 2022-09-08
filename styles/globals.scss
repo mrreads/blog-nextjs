@@ -71,7 +71,6 @@ img {
   background-color: #555555;
   padding: 20px 55px;
   border-radius: 35px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,10 +82,9 @@ img {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 55px;
-  & .heading {
-  }
   & .back {
-    padding: 25px 50px;
+    flex-grow: 1;
+    padding: 25px 75px;
     cursor: pointer;
     transform: scale(1);
     transition: .3s all;
@@ -95,7 +93,7 @@ img {
     }
   }
   & .title {
-    flex-grow: 1;
+    flex-grow: 10;
   }
 }
 

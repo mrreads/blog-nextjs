@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 
 import { getAllPost } from './../api/posts';
@@ -32,6 +33,9 @@ export async function getStaticPaths() {
 const SinglePost = ({ post }) => {
   return (
   <>
+    <Head>
+      <title>{ post.data.attributes.title }</title>
+    </Head>
 
     <div className='heading-wrapper'>
       <Link href="/">
