@@ -1,6 +1,5 @@
 import BASE_URL from '/config/';
 import Link from "next/link";
-import Image from 'next/image';
 
 const Post = ({ data }) => 
 {
@@ -11,7 +10,7 @@ const Post = ({ data }) =>
     <Link href={`/blog/${slug}`}>
         <div className="post">
             <div className='image'>
-                <Image loader={() => src} src={src} layout='fill'/>
+                <img src={src}/>
             </div>
             <div className='info'>
                 <h2> { title } </h2>
