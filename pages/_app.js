@@ -1,8 +1,9 @@
 import Layout from './../layouts';
 
-import '../styles/ck-content.css';
-import '../styles/wysiwyg.css';
-import '../styles/globals.scss';
+import '/utils/prism.css';
+import '/styles/ck-content.css';
+import '/styles/wysiwyg.css';
+import '/styles/globals.scss';
 
 const App = ({ Component, pageProps }) => {
   return <Layout> <Component {...pageProps} /> </Layout>
