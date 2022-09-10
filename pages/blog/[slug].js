@@ -9,7 +9,10 @@ import Post from 'components/Post';
 export async function getStaticProps(context) {
   const slug = context.params.slug;
   const post = await getPostBySlug(slug);
-  return { props: { post: post }}
+  return { 
+    props: { post: post },
+    revalidate: 60
+  }
 }
 
 export async function getStaticPaths() {
