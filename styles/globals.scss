@@ -137,6 +137,9 @@ img {
     & img {
       //width: 100%;
     }
+    & figcaption {
+      margin-top: auto;
+    }
   }
 }
 @media screen and (max-width: 1440px) {

@@ -1,6 +1,7 @@
 import Layout from './../layouts';
 
 import '../styles/ck-content.css';
+import '../styles/wysiwyg.css';
 import '../styles/globals.scss';
 
 const App = ({ Component, pageProps }) => {
