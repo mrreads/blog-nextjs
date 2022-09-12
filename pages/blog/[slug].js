@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 
 import Head from 'next/head';
 import Link from 'next/link';
@@ -8,12 +8,20 @@ import { getPostBySlug } from './../api/post';
 
 const Post = lazy(() => import('components/Post'));
 
-export async function getStaticProps(context) {
-  const slug = context.params.slug;
-  const post = await getPostBySlug(slug);
-  return { 
-    props: { post: post },
-    revalidate: 60
+export async function getStaticProps(context) 
+{
+  const slug = context.params.slug
+  let post = {}
+  try
+  {
+    post = await getPostBySlug(slug);
+  }
+  finally 
+  {
+    return { 
+      props: { post: post },
+      revalidate: 60
+    }
   }
 }
 
@@ -36,6 +44,8 @@ export async function getStaticPaths() {
 
 
 const SinglePost = ({ post }) => {
+  const loading = <p className='message'>Идёт загрузка...</p>;
+
   return (
   <>
     <Head>
@@ -49,12 +59,14 @@ const SinglePost = ({ post }) => {
       </div>
       </Link>
       <div className='heading title'>
-        <h1> { post.data.attributes.title } </h1>
+        <h1> { (post.data.attributes.title) ? post.data.attributes.title : 'Загрухка' } </h1>
       </div>
     </div>
 
-
-    <Post data={post.data.attributes} />
+    <Suspense fallback={loading}>
+      <Post data={post.data.attributes} />
+    </Suspense>
+    
   </>)
 }
 

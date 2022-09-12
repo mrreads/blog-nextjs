@@ -32,23 +32,18 @@ const Home = ({ posts }) => {
 }
 
 export async function getStaticProps() {
+  let posts = {}
   try
   {
-    const posts = await getAllPost();
+    posts = await getAllPost();
+  }
+  finally 
+  {
     return {
       props: { posts },
       revalidate: 60
     }
   }
-  catch
-  {
-    return {
-      props: { posts: {} },
-      revalidate: 60
-    }
-  }
-
-
 }
 
 export default Home;
