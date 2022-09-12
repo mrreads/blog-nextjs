@@ -1,10 +1,12 @@
+import { lazy } from 'react';
+
 import Head from 'next/head';
 import Link from 'next/link';
 
 import { getAllPost } from './../api/posts';
 import { getPostBySlug } from './../api/post';
 
-import Post from 'components/Post';
+const Post = lazy(() => import('components/Post'));
 
 export async function getStaticProps(context) {
   const slug = context.params.slug;

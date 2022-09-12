@@ -101,6 +101,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 35px;
+  position: relative;
 
   & .post {
     overflow: hidden;
@@ -180,6 +181,14 @@ img {
       }
     }
   }
+}
+
+.message {
+  font-family: "Montserrat";
+  text-align: center;
+  font-size: 23px;
+  position: absolute;
+  width: 100%;
 }
 
 @media screen and (max-width: 570px) {
