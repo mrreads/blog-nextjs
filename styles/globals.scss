@@ -198,6 +198,10 @@ img {
   .heading-wrapper {
     font-size: 12px;
   }
+  iframe[title="YouTube video player"]
+  {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 425px) {
