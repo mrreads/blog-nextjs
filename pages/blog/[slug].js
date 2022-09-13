@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 
 import Head from 'next/head';
 import Link from 'next/link';
@@ -46,8 +46,23 @@ export async function getStaticPaths() {
 const SinglePost = ({ post }) => {
   const loading = <p className='message'>Идёт загрузка...</p>;
 
+  const [scrollPercent, setScrollPercent] = useState(0);
+  
+  const handleScroll = () => {
+    let percent = ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100);
+    setScrollPercent(parseInt(percent));
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
+  
   return (
   <>
+
+    <div className='progress-bar' style={{ width: scrollPercent + '%' }} />
+
     <Head>
       <title>{ post.data.attributes.title }</title>
     </Head>
