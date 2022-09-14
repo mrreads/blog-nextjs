@@ -9,6 +9,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  compiler: {
+    reactRemoveProperties: { properties: ['^data-testid$'] },
+  },
 }
 
 module.exports = nextConfig

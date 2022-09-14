@@ -9,7 +9,7 @@ const Error = () => {
       </Head>
 
       <Link href="/">
-        <div className='heading-wrapper'>
+        <div className='heading-wrapper error' data-testid="page-error">
           <div className='heading' style={{cursor: "pointer"}}>
             <h1> Перейти на главную </h1>
           </div>

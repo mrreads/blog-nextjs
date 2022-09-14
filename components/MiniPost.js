@@ -1,4 +1,4 @@
-import BASE_URL from '/config/';
+import BASE_URL from './../config/';
 import Link from "next/link";
 
 const Post = ({ data }) => 
@@ -9,10 +9,10 @@ const Post = ({ data }) =>
     return (
     <Link href={`/blog/${slug}`}>
         <div className="post">
-            <div className='image'>
+            <div className='image' data-testid="post-image" >
                 <img src={src}/>
             </div>
-            <div className='info'>
+            <div className='info' data-testid="post-info">
                 <h2> { title } </h2>
                 <p> { description } </p>
             </div>
